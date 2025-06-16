@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  overflow-x: hidden;
+}
+
+.stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(255, 255, 0, 0.6), 0 0 25px rgba(255, 255, 0, 0.4);
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
